@@ -1,0 +1,55 @@
+<section id="contactme">
+  <div>
+
+    <div>
+      <h2>Contact</h2>
+    </div>
+
+    <div>
+      <div>
+        <h3>Got a problem to solve?</h3>
+        <p>Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to
+          your
+          projects with my work.</p>
+        <span>Need a Frontend developer? <b>Contact me!</b></span>
+      </div>
+
+      <div>
+        <label for="name" class="error">
+          <input type="text" name="name" id="name" placeholder="">
+          <span class="placeholder">Your name</span>
+          <span class="error">Your name is required</span>
+        </label>
+
+        <label for="email" class="tick">
+          <input type="email" name="email" id="email" placeholder="">
+          <span class="placeholder">Your email</span>
+          <span class="error">Your email is required</span>
+        </label>
+
+        <label for="message">
+          <textarea name="message" id="message" placeholder=""></textarea>
+          <span class="placeholder">Your message</span>
+          <span class="error">Your message is empty</span>
+        </label>
+
+        <div>
+          <label for="privacy">
+            <input type="checkbox" name="privacy" id="privacy">
+            <span></span>
+            <p>I've read the <a href="#">privacy policy</a> and agree to the processing of my data as outlined.</p>
+            <span class="error">Please accept the privacy policy.</span>
+          </label>
+
+        </div>
+
+        <app-primary-button [buttonText]="'Say hello ;)'" [isDisable]="true"></app-primary-button>
+      </div>
+    </div>
+
+    <a href="#"></a>
+
+  </div>
+  <app-red-ball [width]="'204px'" [top]="'60%'" [left]="'20%'"></app-red-ball>
+  <app-red-ball [width]="'73px'" [bottom]="'7%'" [right]="'8%'"></app-red-ball>
+</section>

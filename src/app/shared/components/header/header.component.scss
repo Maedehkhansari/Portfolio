@@ -1,0 +1,38 @@
+@import './../../../../styles.scss';
+
+header {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat','Courier New', Courier, monospace;
+ 
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: $mainWidth;
+    margin: 25px 100px;
+    
+  }
+}
+
+.header-links {
+  display: flex;
+  gap: 36px;
+  a{
+    color: $primaryColor;
+    text-decoration: none;
+    font-size: 23px;
+    transition: all 0.2s ease;
+    
+    &:hover{
+      font-weight: bold;
+    }
+  }
+  
+}
+

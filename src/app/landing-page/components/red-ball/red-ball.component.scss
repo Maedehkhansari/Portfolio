@@ -1,0 +1,7 @@
+@import "./../../../../styles.scss";
+
+div {
+  background: linear-gradient(145deg, $primaryColor 45%, $secondaryColor);
+  border-radius: 50%;
+  position: absolute;
+}

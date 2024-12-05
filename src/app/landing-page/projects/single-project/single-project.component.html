@@ -1,0 +1,17 @@
+<div [className]="isEven ? 'even' : 'odd'">
+  <div>
+    <img [src]="'img/projects/' + singleProject.image" [alt]="singleProject.name">
+  </div>
+  <div>
+    <h3>{{singleProject.name}}</h3>
+    <div>
+      @for (tool of singleProject.tools; track $index; let last = $last) {
+      {{tool}} @if (!last) {|}
+      }
+    </div>
+    <p>{{singleProject.description}}</p>
+    <a [href]="singleProject.link">
+      <app-primary-button [buttonText]="'Github'"></app-primary-button>
+    </a>
+  </div>
+</div>

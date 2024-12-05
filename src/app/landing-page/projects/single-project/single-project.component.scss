@@ -1,0 +1,60 @@
+@import "./../../../../styles.scss";
+
+div {
+  display: flex;
+  align-items: end;
+  z-index: 100;
+
+  > div:nth-child(1) {
+    transition: transform 0.3s ease;
+    transform: scale(1);
+    transform-origin: bottom;
+    margin-right: 80px;
+    > img {
+      box-shadow: 3px 3px 20px 0px #d5d5d5;
+    }
+    &:hover {
+      transform: scale(1.15);
+    }
+  }
+
+  > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+
+    > h3 {
+      font-family: "Baloo", "Courier New", Courier, monospace;
+      font-size: 45px;
+      line-height: 45px;
+      font-weight: 400;
+      color: $primaryColor;
+    }
+    > div {
+      font-family: "Montserrat", "Courier New", Courier, monospace;
+      font-size: 23px;
+      color: $primaryColor;
+      font-weight: 400;
+    }
+    > p {
+      font-family: "Montserrat", "Courier New", Courier, monospace;
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+  }
+}
+
+div.even {
+  flex-direction: row-reverse;
+
+  > div:nth-child(1) {
+    margin-left: 80px;
+    margin-right: 0;
+  }
+
+  > div:nth-child(2) {
+    align-items: end;
+    text-align: right;
+  }
+}

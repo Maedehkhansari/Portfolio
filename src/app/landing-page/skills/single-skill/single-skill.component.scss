@@ -1,0 +1,28 @@
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", "Courier New", Courier, monospace;
+  color: #fff;
+  font-weight: 300;
+  text-align: center;
+
+  > img {
+    position: relative;
+    bottom: 10px;
+    transition: all 0.2s ease;
+  }
+
+  &:hover > img {
+    bottom: 20px;
+  }
+
+  > span {
+    transition: all 0.2s ease;
+  }
+
+  &:hover > span {
+    font-weight: 600;
+  }
+}

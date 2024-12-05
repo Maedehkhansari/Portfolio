@@ -1,0 +1,16 @@
+<section id="projects">
+  <div>
+    <div>
+      <h2>My Work</h2>
+      <p>Feel free to try out my latest development projects and <br> look into their code.</p>
+    </div>
+    <div>
+
+      @for (project of projects; track $index) {
+        <app-single-project [singleProject]="project" [isEven]="$index % 2 !== 0"></app-single-project>
+      }
+
+    </div>
+  </div>
+  <app-red-ball [width]="'652px'" [top]="'36%'" [right]="'-8%'"></app-red-ball>
+</section>

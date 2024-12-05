@@ -1,0 +1,262 @@
+@import "./../../../styles.scss";
+
+section {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(#ffffff, #ffeaea);
+  position: relative;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: $mainWidth;
+    margin: 50px 100px;
+    gap: 70px;
+    position: relative;
+
+    > div:nth-child(1) {
+      > h2 {
+        font-family: "Baloo", "Courier New", Courier, monospace;
+        font-weight: 400;
+        font-size: 90px;
+        color: $primaryColor;
+      }
+    }
+
+    > div:nth-child(2) {
+      display: flex;
+      gap: 150px;
+
+      > div:nth-child(1) {
+        width: 35%;
+        font-family: "Montserrat", "Courier New", Courier, monospace;
+
+        > h3 {
+          font-size: 32px;
+          font-weight: 700;
+          color: $primaryColor;
+          margin-bottom: 35px;
+        }
+
+        > p {
+          font-size: 16px;
+          margin-bottom: 25px;
+        }
+
+        > span {
+          font-size: 16px;
+          color: $primaryColor;
+
+          > b {
+            font-family: "Baloo", "Courier New", Courier, monospace;
+            font-weight: 400;
+            font-size: 19px;
+          }
+        }
+      }
+
+      > div:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+
+        > label {
+          position: relative;
+          display: flex;
+          margin-bottom: 35px;
+
+          &::after {
+            position: absolute;
+            right: 30px;
+            top: 12px;
+          }
+
+          > input,
+          > textarea {
+            border-radius: 10px;
+            border: solid 1px $primaryColor;
+            padding: 15px 25px;
+            font-family: "Montserrat", "Courier New", Courier, monospace;
+            font-size: 16px;
+            outline: none;
+            flex: 1;
+
+            &:hover {
+              border-width: 2px;
+              padding: 14px 24px;
+            }
+
+            &:focus {
+              border-width: 1px;
+              padding: 15px 25px;
+            }
+          }
+
+          > textarea {
+            height: 202px;
+            resize: none;
+          }
+
+          > span.placeholder {
+            position: absolute;
+            top: 15px;
+            left: 25px;
+            font-family: "Montserrat", "Courier New", Courier, monospace;
+            background: #fff;
+            transition: top 0.2s ease;
+            pointer-events: none;
+          }
+
+          > input:focus + span.placeholder,
+          > textarea:focus + span.placeholder,
+          > input:not(:placeholder-shown) + span.placeholder,
+          > textarea:not(:placeholder-shown) + span.placeholder {
+            top: -9px;
+          }
+        }
+
+        > label:nth-child(3) {
+          margin-bottom: 20px;
+        }
+
+        > label.error {
+          &::after {
+            content: url(./../../../assets/img/icons/error.svg);
+          }
+        }
+
+        > label.tick {
+          &::after {
+            content: url(./../../../assets/img/icons/tick.svg);
+          }
+        }
+
+        > div {
+          margin-bottom: 40px;
+          > label {
+            font-family: "Montserrat", "Courier New", Courier, monospace;
+            font-size: 14px;
+            position: relative;
+            cursor: pointer;
+
+            > span:nth-child(2) {
+              &::before {
+                content: url("./../../../assets/img/icons/check_box_outline_blank.svg");
+                position: absolute;
+                top: -3px;
+                left: -3px;
+              }
+            }
+
+            > input:checked + span:nth-child(2) {
+              &::before {
+                content: url("./../../../assets/img/icons/check_box.svg");
+              }
+            }
+
+            > input {
+              display: none;
+            }
+
+            > p {
+              position: relative;
+              left: 30px;
+
+              > a {
+                color: $primaryColor;
+                text-decoration: none;
+              }
+            }
+
+            &:hover > p > a {
+              text-decoration: underline;
+              color: $secondaryColor;
+              font-weight: 700;
+            }
+
+            &:hover > span:nth-child(2) {
+              &::before {
+                content: url("./../../../assets/img/icons/check_box_outline_blank_hover.svg");
+              }
+            }
+
+            &:hover > input:checked + span:nth-child(2) {
+              &::before {
+                content: url("./../../../assets/img/icons/check_box_hover.svg");
+              }
+            }
+          }
+        }
+
+        > app-primary-button {
+          text-align: center;
+        }
+
+        span.error {
+          font-family: "Montserrat", "Courier New", Courier, monospace;
+          font-size: 13px;
+          color: #e61c40;
+          position: absolute;
+          bottom: 0;
+          opacity: 0;
+          transition: all 0.4s ease;
+        }
+
+        span.error.show {
+          bottom: -20px;
+          opacity: 1;
+        }
+      }
+    }
+
+    > a {
+      width: 40px;
+      height: 40px;
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(145deg, $primaryColor 45%, $secondaryColor);
+        opacity: 1;
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+        width: 36px;
+        height: 36px;
+        border: solid 2px $primaryColor;
+      }
+
+      &::after {
+        content: url("./../../../assets/img/icons/go-up.svg");
+        position: absolute;
+        top: 12px;
+        transition: content 0.3s ease;
+      }
+
+      &:hover::before {
+        opacity: 0;
+      }
+
+      &:hover::after {
+        top: 10px;
+        content: url("./../../../assets/img/icons/go-up-red.svg");
+      }
+    }
+  }
+}

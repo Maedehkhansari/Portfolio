@@ -1,0 +1,75 @@
+@import "./../../../../styles.scss";
+
+footer {
+  background: linear-gradient(145deg, $primaryColor 45%, $secondaryColor);
+  display: flex;
+  justify-content: center;
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: $mainWidth;
+    margin: 120px 100px;
+
+    > div:nth-child(2) {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      color: white;
+      font-family: "Montserrat", "Courier New", Courier, monospace;
+      font-weight: 300;
+
+      > span {
+        font-size: 23px;
+      }
+
+      > div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 3px;
+        position: absolute;
+        top: 60px;
+
+        > a {
+          font-size: 16px;
+          color: #fff;
+          text-decoration: none;
+          transition: all 0.2s ease;
+          &:hover {
+            font-weight: 600;
+          }
+
+          &:hover + div {
+            opacity: 1;
+            right: 0;
+          }
+        }
+
+        > div {
+          position: relative;
+          transition: all 0.2s ease;
+          width: 60%;
+          border-bottom: solid 2px #fff;
+          right: 30px;
+          opacity: 0;
+        }
+      }
+    }
+
+    > div:nth-child(3) {
+      display: flex;
+      gap: 42px;
+
+      > a {
+        transform: scale(1);
+        transition: all 0.2s ease;
+
+        &:hover {
+          transform: scale(1.4);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@import "./../../../styles.scss";
+
+section {
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  > div:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+    width: $mainWidth;
+    margin: 180px 100px 120px 100px;
+
+    > div:nth-child(1) {
+      flex: 1;
+
+      > h2 {
+        color: $primaryColor;
+        font-weight: 400;
+        font-family: "Baloo", "Courier New", Courier, monospace;
+        font-size: 121px;
+        line-height: 121px;
+      }
+    }
+
+    > div:nth-child(2) {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+
+      > p {
+        font-family: "Montserrat", "Courier New", Courier, monospace;
+        font-weight: 400;
+        font-size: 23px;
+      }
+    }
+  }
+}
