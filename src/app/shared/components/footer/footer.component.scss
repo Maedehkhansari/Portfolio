@@ -10,7 +10,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     width: $mainWidth;
-    margin: 120px 100px;
+    margin: 120px $baseMarginLeftRight;
 
     > div:nth-child(2) {
       display: flex;

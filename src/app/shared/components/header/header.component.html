@@ -1,12 +1,22 @@
 <header>
   <div>
     <div>
-      <img src="img/logo/small-logo.png" alt="logo">
+      <img [src]="whiteLogo" [class.hidden]="isChecked" alt="logo">
+      <img [src]="redLogo" [class.hidden]="!isChecked"  alt="logo">
     </div>
-    <div class="header-links">
-      <a href="#aboutme">About me</a>
-      <a href="#skills">Skill set</a>
-      <a href="#projects">My work</a>
+    <div>
+      <input type="checkbox" id="menuCheckbox" [checked]="isChecked" [(ngModel)]="isChecked"/>
+      
+      <span></span>
+      <span></span>
+      <span></span>
+
+      <div class="menu" (click)="closeMenu()">
+        <a href="#aboutme">About me</a>
+        <a href="#skills">Skill set</a>
+        <a href="#projects">My work</a>
+        <a href="#contactme">Contact</a>
+      </div>
     </div>
   </div>
 </header>

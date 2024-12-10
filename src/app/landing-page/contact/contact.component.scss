@@ -12,7 +12,7 @@ section {
     justify-content: center;
     align-items: start;
     width: $mainWidth;
-    margin: 50px 100px;
+    margin: 50px $baseMarginLeftRight;
     gap: 70px;
     position: relative;
 

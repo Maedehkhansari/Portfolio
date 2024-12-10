@@ -1,4 +1,4 @@
-@import './../../../../styles.scss';
+@import "./../../../../styles.scss";
 
 header {
   position: absolute;
@@ -7,32 +7,138 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Montserrat','Courier New', Courier, monospace;
- 
+  font-family: "Montserrat", "Courier New", Courier, monospace;
 
   > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: $mainWidth;
-    margin: 25px 100px;
-    
-  }
-}
+    margin: 25px $baseMarginLeftRight;
 
-.header-links {
-  display: flex;
-  gap: 36px;
-  a{
-    color: $primaryColor;
-    text-decoration: none;
-    font-size: 23px;
-    transition: all 0.2s ease;
-    
-    &:hover{
-      font-weight: bold;
+    > div:nth-child(1) {
+      > img {
+        z-index: 101;
+        position: relative;
+        opacity: 1;
+        scale: (1);
+        transition: opacity 0.4s ease-in-out;
+
+      }
+
+      > img.hidden {
+        opacity: 0;
+        position: absolute;
+        scale: (0);
+      }
+    }
+
+    > div:nth-child(2) {
+      position: relative;
+      > input {
+        display: none;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: -7px;
+        left: -5px;
+        cursor: pointer;
+        opacity: 0; /* hide this */
+        z-index: 2; /* and place it over the hamburger */
+        -webkit-touch-callout: none;
+      }
+
+      > span {
+        display: none;
+        width: 32px;
+        height: 2px;
+        margin-bottom: 11px;
+        position: relative;
+        background: #ff5959;
+        border-radius: 5px;
+        z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+          background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+      }
+      > span:nth-child(2) {
+        transform-origin: 0% 0%;
+      }
+
+      > span:nth-child(4) {
+        transform-origin: 0% 100%;
+      }
+
+      > input:checked ~ span {
+        opacity: 1;
+        transform: rotate(45deg) translate(2px, 2px);
+      }
+
+      > input:checked ~ span:nth-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+      }
+
+      > input:checked ~ span:nth-child(4) {
+        transform: rotate(-45deg) translate(0, -1px);
+      }
+
+      > div {
+        display: flex;
+        gap: 36px;
+        a {
+          color: $primaryColor;
+          text-decoration: none;
+          font-size: 23px;
+          transition: all 0.2s ease;
+
+          &:hover {
+            font-weight: bold;
+          }
+        }
+      }
     }
   }
-  
 }
 
+@media (max-width: 1200px) {
+  header {
+    z-index: 100;
+
+    > div {
+      > div:nth-child(2) {
+        input:checked ~ .menu {
+          transform: none;
+        }
+
+        > input {
+          display: block;
+          z-index: 1000;
+        }
+
+        > span {
+          display: block;
+          z-index: 900;
+        }
+
+        > div {
+          display: flex;
+          width: 100%;
+          height: 100vh;
+          background: white;
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: 100;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          -webkit-font-smoothing: antialiased;
+          transform-origin: 0% 0%;
+          transform: translate(100%, 0);
+          transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+        }
+      }
+    }
+  }
+}

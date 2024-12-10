@@ -9,7 +9,7 @@ section {
     display: flex;
     justify-content: space-between;
     width: $mainWidth;
-    margin: 180px 100px 120px 100px;
+    margin: 180px $baseMarginLeftRight 120px $baseMarginLeftRight;
 
     > div:nth-child(1) {
       flex: 1;

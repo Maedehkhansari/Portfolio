@@ -9,7 +9,7 @@ section {
     display: flex;
     flex-direction: column;
     width: $mainWidth;
-    margin: 100px;
+    margin: 100px $baseMarginLeftRight;
 
     > div:nth-child(1) {
       display: flex;
