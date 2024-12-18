@@ -2,11 +2,9 @@ import { Component } from '@angular/core';
 import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-footer',
+  selector: 'app-datenschutz',
   imports: [TranslatePipe, TranslateDirective],
-  templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss',
+  templateUrl: './datenschutz.component.html',
+  styleUrl: './datenschutz.component.scss',
 })
-export class FooterComponent {
-  nowDate = new Date();
-}
+export class DatenschutzComponent {}

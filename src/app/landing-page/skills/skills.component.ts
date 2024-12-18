@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { SingleSkillComponent } from './single-skill/single-skill.component';
+import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-skills',
-  imports: [SingleSkillComponent],
+  imports: [SingleSkillComponent, TranslatePipe, TranslateDirective],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss',
 })

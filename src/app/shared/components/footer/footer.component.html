@@ -1,26 +1,27 @@
 <footer>
   <div>
     <div>
-      <img src="img/logo/small-logo.png" alt="logo">
+      <a href="#">
+        <img src="img/logo/small-logo.png" alt="logo" />
+      </a>
     </div>
     <div>
-      <span>&copy; Maedeh Khonsari {{nowDate.getFullYear()}}</span>
+      <span>&copy; Maedeh Khonsari {{ nowDate.getFullYear() }}</span>
       <div>
-        <a href="#">Impressum</a>
+        <a href="impressum" [translate]="'app.menu.legalNotice'"></a>
         <div></div>
       </div>
     </div>
     <div>
-      <a href="#">
-        <img src="img/icons/github-red.svg" alt="github">
+      <a href="https://github.com/Maedehkhansari" target="_blank">
+        <img src="img/icons/github-red.svg" alt="github" />
       </a>
-      <a href="#">
-        <img src="img/icons/email-red.svg" alt="email">
+      <a href="mailto:info@maedehkhonsari.com">
+        <img src="img/icons/email-red.svg" alt="email" />
       </a>
-      <a href="#">
-        <img src="img/icons/linkedin-red.svg" alt="linkedin">
+      <a href="https://www.linkedin.com/in/maedehkhansari/" target="_blank">
+        <img src="img/icons/linkedin-red.svg" alt="linkedin" />
       </a>
     </div>
-
   </div>
 </footer>

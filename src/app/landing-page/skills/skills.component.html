@@ -1,8 +1,6 @@
 <section id="skills">
   <div>
-    <h2>
-      Skill set
-    </h2>
+    <h2 [translate]="'app.menu.skills'"></h2>
     <div>
         @for (skill of skills; track $index){
           <app-single-skill [singleSkill]="skill"></app-single-skill>

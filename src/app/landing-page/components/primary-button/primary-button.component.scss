@@ -3,7 +3,7 @@
 button {
   position: relative;
   border: 2px solid $primaryColor;
-  padding: 15px 30px;
+  padding: 12px 25px;
   border-radius: 12px;
   color: $primaryColor;
   font-size: 23px;
@@ -44,7 +44,7 @@ button {
 
   &:hover {
     color: white;
-    padding: 17px 30px;
+    padding: 14px 30px;
     border: none;
     transform: scale(1.2);
     box-shadow: 2px 2px 11px 0px #b0b0b0;
@@ -52,7 +52,7 @@ button {
 
   &:disabled:hover {
     color: #bbbbbb;
-    padding: 15px 30px;
+    padding: 12px 25px;
     border: 2px solid #bbbbbb;
     transform: scale(1);
     box-shadow: none;

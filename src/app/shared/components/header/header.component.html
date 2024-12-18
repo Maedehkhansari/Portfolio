@@ -1,21 +1,33 @@
-<header>
+<header [ngClass]="{ fixed: isFixed }">
   <div>
     <div>
-      <img [src]="whiteLogo" [class.hidden]="isChecked" alt="logo">
-      <img [src]="redLogo" [class.hidden]="!isChecked"  alt="logo">
+      <a href="#">
+        <img [src]="whiteLogo" [class.hidden]="showColoredLogo" alt="logo" />
+        <img [src]="redLogo" [class.hidden]="!showColoredLogo" alt="logo" />
+      </a>
     </div>
     <div>
-      <input type="checkbox" id="menuCheckbox" [checked]="isChecked" [(ngModel)]="isChecked"/>
-      
+      <input
+        (click)="changeLogo()"
+        type="checkbox"
+        id="menuCheckbox"
+        [checked]="isChecked"
+        [(ngModel)]="isChecked"
+      />
+
       <span></span>
       <span></span>
       <span></span>
 
       <div class="menu" (click)="closeMenu()">
-        <a href="#aboutme">About me</a>
-        <a href="#skills">Skill set</a>
-        <a href="#projects">My work</a>
-        <a href="#contactme">Contact</a>
+        <a href="#aboutme" [translate]="'app.menu.aboutme'"></a>
+        <a href="#skills" [translate]="'app.menu.skills'"></a>
+        <a href="#projects" [translate]="'app.menu.projects'"></a>
+        <a href="#contactme" [translate]="'app.menu.contactme'">Contact</a>
+        <a (click)="changeLanguage()">{{
+          languages[selectedLanguage === 0 ? 1 : 0].title
+        }}</a>
+        <div (click)="changeColor()"></div>
       </div>
     </div>
   </div>

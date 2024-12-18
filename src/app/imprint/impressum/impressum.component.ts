@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-footer',
+  selector: 'app-impressum',
   imports: [TranslatePipe, TranslateDirective],
-  templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss',
+  templateUrl: './impressum.component.html',
+  styleUrl: './impressum.component.scss'
 })
-export class FooterComponent {
-  nowDate = new Date();
+export class ImpressumComponent {
+
 }

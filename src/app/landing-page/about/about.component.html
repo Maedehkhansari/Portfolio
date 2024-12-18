@@ -1,19 +1,13 @@
 <section id="aboutme">
   <div>
-    <div class="left">
+    <div>
       <h2>Let's work together</h2>
     </div>
-    <div class="right">
-      <p>
-        I am a Front-end developer based in Köln, Germany. I enjoy helping designers and companies bring their ideas
-        into real life. I am looking forward to continuing my developer career with a job in a junior web developer
-        position.
-        <br><br>
-        If you think I’d be a good match for your projects, contact me!
-      </p>
+    <div>
+      <p [innerHTML]="'app.aboutme' | translate"></p>
 
       <a href="#contactme">
-        <app-primary-button [buttonText]="'Send a message'"></app-primary-button>  
+        <app-primary-button [buttonText]="'app.button.sendMessage' | translate"></app-primary-button>  
       </a>
 
     </div>

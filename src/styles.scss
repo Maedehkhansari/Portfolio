@@ -156,11 +156,36 @@
   scroll-behavior: smooth;
 }
 
+html,
+body,
+app-root {
+  height: 100%;
+}
+
 body {
   overflow-x: hidden;
 }
 
-$mainWidth: 1440px;
+app-root {
+  display: flex;
+  flex-direction: column;
+}
+
+app-impressum {
+  flex: 1;
+}
+
+$mainWidth: 1640px;
 $baseMarginLeftRight: 20px;
-$primaryColor: #ff5959;
-$secondaryColor: #de0000;
+
+:root {
+  --primaryColor: #ff5959;
+  --secondaryColor: #de0000;
+  --shadowColor: #ffeaea;
+  --svgIconColor: hue-rotate(0deg) brightness(1);
+}
+
+$primaryColor: var(--primaryColor);
+$secondaryColor: var(--secondaryColor);
+$shadowColor: var(--shadowColor);
+$svgIconColor: var(--svgIconColor);

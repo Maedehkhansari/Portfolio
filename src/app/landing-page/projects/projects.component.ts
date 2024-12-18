@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
 import { SingleProjectComponent } from './single-project/single-project.component';
 import { RedBallComponent } from '../components/red-ball/red-ball.component';
+import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-projects',
-  imports: [SingleProjectComponent, RedBallComponent],
+  imports: [
+    SingleProjectComponent,
+    RedBallComponent,
+    TranslatePipe,
+    TranslateDirective,
+  ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
 })

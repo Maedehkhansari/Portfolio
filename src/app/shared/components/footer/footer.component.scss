@@ -12,6 +12,12 @@ footer {
     width: $mainWidth;
     margin: 120px $baseMarginLeftRight;
 
+    @media (max-width: 750px) {
+      flex-direction: column;
+      gap: 30px;
+      margin: 60px 20px 100px;
+    }
+
     > div:nth-child(2) {
       display: flex;
       justify-content: center;
@@ -22,6 +28,10 @@ footer {
 
       > span {
         font-size: 23px;
+
+        @media (max-width: 400px) {
+          font-size: 20px;
+        }
       }
 
       > div {
@@ -31,6 +41,10 @@ footer {
         gap: 3px;
         position: absolute;
         top: 60px;
+
+        @media (max-width: 750px) {
+          top: 120px;
+        }
 
         > a {
           font-size: 16px;
