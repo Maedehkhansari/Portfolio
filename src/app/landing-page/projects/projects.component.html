@@ -1,8 +1,8 @@
 <section id="projects">
   <div>
     <div>
-      <h2>My Work</h2>
-      <p>Feel free to try out my latest development projects and <br> look into their code.</p>
+      <h2 [translate]="'app.menu.projects'"></h2>
+      <p [innerHTML]="'app.projectText' | translate"></p>
     </div>
     <div>
 
@@ -12,5 +12,8 @@
 
     </div>
   </div>
-  <app-red-ball [width]="'652px'" [top]="'36%'" [right]="'-8%'"></app-red-ball>
+  <app-red-ball [width]="'100px'" [top]="'4%'" [left]="'35%'" [hiddenSize]="1200"></app-red-ball>
+  <app-red-ball [width]="'180px'" [top]="'10%'" [right]="'7%'" [hiddenSize]="500"></app-red-ball>
+  <app-red-ball [width]="'390px'" [top]="'24%'" [left]="'-12%'" [hiddenSize]="900"></app-red-ball>
+  <app-red-ball [width]="'652px'" [top]="'36%'" [right]="'-8%'" [hiddenSize]="1100"></app-red-ball>
 </section>

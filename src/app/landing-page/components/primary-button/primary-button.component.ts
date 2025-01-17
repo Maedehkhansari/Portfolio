@@ -9,5 +9,7 @@ import { Component, Input } from '@angular/core';
 export class PrimaryButtonComponent {
   @Input() buttonText!: string;
 
-  @Input() isDisable: boolean = false;
+  @Input() isDisable: boolean | null = false;
+
+  @Input() buttonType: string = "button";
 }

@@ -2,24 +2,80 @@
 
 section {
   height: 115vh;
-  background: linear-gradient(#ffffff, #ffeaea);
+  background: linear-gradient(#ffffff, $shadowColor);
   overflow: hidden;
   display: flex;
   justify-content: center;
 
-  > img {
-    position: absolute;
-    top: 0;
-    left: 0;
+  @media (max-width: 1400px) {
+    height: 103vh;
   }
 
-  > div {
+  > div:nth-child(1) {
+    background: linear-gradient(145deg, $primaryColor 45%, $secondaryColor);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    width: 900px;
+    height: 900px;
+    top: -100px;
+    left: -180px;
+
+    @media (max-width: 1400px) {
+      width: 700px;
+      height: 700px;
+    }
+
+    @media (max-width: 950px) {
+      width: 900px;
+      height: 900px;
+    }
+
+    @media (max-width: 700px) {
+      width: 750px;
+      height: 750px;
+    }
+
+    @media (max-width: 490px) {
+      width: 700px;
+      height: 700px;
+    }
+
+    @media (max-width: 450px) {
+      width: 650px;
+      height: 700px;
+    }
+  }
+
+  > div:nth-child(2) {
     position: relative;
     z-index: 1;
     display: flex;
     justify-content: space-between;
     width: $mainWidth;
     margin: 130px $baseMarginLeftRight 0 $baseMarginLeftRight;
+
+    @media (max-width: 950px) {
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+    }
+
+    > div:nth-child(1) {
+      > img {
+        @media (max-width: 1400px) {
+          width: 600px;
+        }
+
+        @media (max-width: 1200px) {
+          width: 540px;
+        }
+
+        @media (max-width: 950px) {
+          width: 430px;
+        }
+      }
+    }
 
     > div:nth-child(2) {
       margin-top: 110px;
@@ -34,6 +90,32 @@ section {
           font-family: "Montserrat", "Courier New", Courier, monospace;
           font-weight: 400;
           margin-bottom: 15px;
+
+          @media (max-width: 1500px) {
+            font-size: 54px;
+            margin-bottom: 8px;
+          }
+
+          @media (max-width: 1400px) {
+            font-size: 44px;
+            margin-bottom: 8px;
+          }
+
+          @media (max-width: 1200px) {
+            font-size: 34px;
+            margin-bottom: 8px;
+          }
+
+          @media (max-width: 950px) {
+            font-size: 34px;
+            margin-bottom: 8px;
+            color: #ffffff;
+          }
+
+          @media (max-width: 500px) {
+            font-size: 26px;
+            margin-bottom: 7px;
+          }
         }
 
         > h2 {
@@ -42,10 +124,41 @@ section {
           font-size: 128px;
           line-height: 115px;
           font-weight: 100;
+
+          @media (max-width: 1400px) {
+            font-size: 100px;
+            line-height: 88px;
+          }
+
+          @media (max-width: 1200px) {
+            font-size: 80px;
+            line-height: 70px;
+          }
+
+          @media (max-width: 950px) {
+            color: #ffffff;
+          }
+
+          @media (max-width: 500px) {
+            font-size: 59px;
+            line-height: 52px;
+          }
         }
 
         > h2:nth-child(3) {
           font-size: 118px;
+
+          @media (max-width: 1400px) {
+            font-size: 93px;
+          }
+
+          @media (max-width: 1200px) {
+            font-size: 74px;
+          }
+
+          @media (max-width: 500px) {
+            font-size: 55px;
+          }
         }
       }
 
@@ -56,6 +169,10 @@ section {
         flex-direction: column;
         gap: 10px;
         position: relative;
+
+        @media (max-width: 950px) {
+          display: none;
+        }
 
         > div:nth-child(1) {
           font-family: "Montserrat", "Courier New", Courier, monospace;
@@ -85,10 +202,15 @@ section {
 
           > a {
             position: relative;
-            right: 0;
-            transition: all 0.2s ease;
 
-            &:hover {
+            > img {
+              filter: $svgIconColor;
+              right: 0;
+              position: relative;
+              transition: all 0.2s ease;
+            }
+
+            &:hover > img {
               right: 12px;
             }
           }

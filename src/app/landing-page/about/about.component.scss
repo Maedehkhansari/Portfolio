@@ -10,6 +10,13 @@ section {
     justify-content: space-between;
     width: $mainWidth;
     margin: 180px $baseMarginLeftRight 120px $baseMarginLeftRight;
+    gap: 20px;
+
+    @media (max-width: 800px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
     > div:nth-child(1) {
       flex: 1;
@@ -20,6 +27,16 @@ section {
         font-family: "Baloo", "Courier New", Courier, monospace;
         font-size: 121px;
         line-height: 121px;
+
+        @media (max-width: 900px) {
+          font-size: 90px;
+          line-height: 90px;
+        }
+
+        @media (max-width: 500px) {
+          font-size: 64px;
+          line-height: 74px;
+        }
       }
     }
 

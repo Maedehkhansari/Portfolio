@@ -2,12 +2,18 @@
 
 header {
   position: absolute;
+  top: 0;
   width: 100%;
   z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Montserrat", "Courier New", Courier, monospace;
+  transition: all 0.2s ease;
+
+  @media (max-width: 1250px) {
+    z-index: 100;
+  }
 
   > div {
     display: flex;
@@ -17,16 +23,16 @@ header {
     margin: 25px $baseMarginLeftRight;
 
     > div:nth-child(1) {
-      > img {
+      img {
         z-index: 101;
         position: relative;
         opacity: 1;
         scale: (1);
         transition: opacity 0.4s ease-in-out;
-
+        filter: $svgIconColor;
       }
 
-      > img.hidden {
+      img.hidden {
         opacity: 0;
         position: absolute;
         scale: (0);
@@ -43,9 +49,14 @@ header {
         top: -7px;
         left: -5px;
         cursor: pointer;
-        opacity: 0; /* hide this */
-        z-index: 2; /* and place it over the hamburger */
+        opacity: 0;
+        z-index: 2;
         -webkit-touch-callout: none;
+
+        @media (max-width: 1250px) {
+          display: block;
+          z-index: 1000;
+        }
       }
 
       > span {
@@ -54,12 +65,21 @@ header {
         height: 2px;
         margin-bottom: 11px;
         position: relative;
-        background: #ff5959;
+        background: $primaryColor;
         border-radius: 5px;
         z-index: 1;
         transform-origin: 4px 0px;
         transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
           background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+
+        @media (max-width: 1250px) {
+          display: block;
+          z-index: 900;
+        }
+
+        @media (max-width: 550px) {
+          background: #ffffff;
+        }
       }
       > span:nth-child(2) {
         transform-origin: 0% 0%;
@@ -71,7 +91,14 @@ header {
 
       > input:checked ~ span {
         opacity: 1;
+        background: $primaryColor;
         transform: rotate(45deg) translate(2px, 2px);
+      }
+
+      > input:checked ~ .menu {
+        @media (max-width: 1250px) {
+          transform: none;
+        }
       }
 
       > input:checked ~ span:nth-child(3) {
@@ -86,46 +113,13 @@ header {
       > div {
         display: flex;
         gap: 36px;
-        a {
-          color: $primaryColor;
-          text-decoration: none;
-          font-size: 23px;
-          transition: all 0.2s ease;
+        align-items: center;
 
-          &:hover {
-            font-weight: bold;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 1200px) {
-  header {
-    z-index: 100;
-
-    > div {
-      > div:nth-child(2) {
-        input:checked ~ .menu {
-          transform: none;
-        }
-
-        > input {
-          display: block;
-          z-index: 1000;
-        }
-
-        > span {
-          display: block;
-          z-index: 900;
-        }
-
-        > div {
+        @media (max-width: 1250px) {
           display: flex;
           width: 100%;
           height: 100vh;
-          background: white;
+          background: linear-gradient(#ffffff, #eaf0ff);
           position: fixed;
           top: 0;
           left: 0;
@@ -138,6 +132,44 @@ header {
           transform: translate(100%, 0);
           transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
         }
+
+        a {
+          color: $primaryColor;
+          text-decoration: none;
+          font-size: 23px;
+          transition: all 0.2s ease;
+          cursor: pointer;
+
+          &:hover {
+            font-weight: bold;
+          }
+        }
+
+        > div {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          cursor: pointer;
+          background: conic-gradient(
+            #ff5959 0% 33%,
+            #5988ff 33% 66%,
+            #57e8a2 66% 100%
+          );
+        }
+      }
+    }
+  }
+}
+
+header.fixed {
+  position: fixed;
+  background: rgb(255 255 255 / 90%);
+  z-index: 200;
+
+  > div {
+    > div:nth-child(2) {
+      > span {
+        background: $primaryColor;
       }
     }
   }

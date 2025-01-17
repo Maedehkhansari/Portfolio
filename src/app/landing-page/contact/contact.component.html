@@ -2,54 +2,56 @@
   <div>
 
     <div>
-      <h2>Contact</h2>
+      <h2 [translate]="'app.menu.contactme'"></h2>
     </div>
 
     <div>
       <div>
-        <h3>Got a problem to solve?</h3>
-        <p>Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to
-          your
-          projects with my work.</p>
-        <span>Need a Frontend developer? <b>Contact me!</b></span>
+        <h3 [translate]="'app.contactText1'"></h3>
+        <p [translate]="'app.contactText2'"></p>
+        <span [innerHTML]="'app.contactText3' | translate"></span>
       </div>
 
-      <div>
-        <label for="name" class="error">
-          <input type="text" name="name" id="name" placeholder="">
-          <span class="placeholder">Your name</span>
-          <span class="error">Your name is required</span>
+      <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+
+        <p class="success" *ngIf="formIsSent" [translate]="'app.contactForm.successfullyMessage'"></p>
+        <p class="error" *ngIf="formHasError" [translate]="'app.contactForm.errorMessage'"></p>
+
+        <label for="name" [class.error]="!name.valid && name.touched" [class.tick]="name.valid">
+          <input type="text" #name="ngModel" [(ngModel)]="contactData.name" name="name" id="name" placeholder="" required>
+          <span class="placeholder" [translate]="'app.contactForm.name'"></span>
+          <span class="error" [class.show]="!name.valid && name.touched" [translate]="'app.contactForm.nameValidation'"></span>
         </label>
 
-        <label for="email" class="tick">
-          <input type="email" name="email" id="email" placeholder="">
-          <span class="placeholder">Your email</span>
-          <span class="error">Your email is required</span>
+        <label for="email" [class.error]="!email.valid && email.touched" [class.tick]="email.valid">
+          <input type="email" #email="ngModel" [(ngModel)]="contactData.email" name="email" id="email" placeholder="" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
+          <span class="placeholder" [translate]="'app.contactForm.email'"></span>
+          <span class="error" [class.show]="!email.valid && email.touched" [translate]="'app.contactForm.emailValidation'"></span>
         </label>
 
-        <label for="message">
-          <textarea name="message" id="message" placeholder=""></textarea>
-          <span class="placeholder">Your message</span>
-          <span class="error">Your message is empty</span>
+        <label for="message" [class.error]="!message.valid && message.touched" [class.tick]="message.valid">
+          <textarea name="message" #message="ngModel" [(ngModel)]="contactData.message" id="message" placeholder="" required></textarea>
+          <span class="placeholder" [translate]="'app.contactForm.message'"></span>
+          <span class="error" [class.show]="!message.valid && message.touched" [translate]="'app.contactForm.messageValidation'"></span>
         </label>
 
         <div>
           <label for="privacy">
-            <input type="checkbox" name="privacy" id="privacy">
+            <input type="checkbox" #privacy="ngModel" [(ngModel)]="contactData.privacy" name="privacy" id="privacy" required>
             <span></span>
-            <p>I've read the <a href="#">privacy policy</a> and agree to the processing of my data as outlined.</p>
-            <span class="error">Please accept the privacy policy.</span>
+            
           </label>
-
+          <p>{{ 'app.contactForm.privacyPartOne' | translate }} <a href='datenschutz'>{{ 'app.contactForm.privacyLink' | translate }}</a> {{ 'app.contactForm.privacyPartTwo' | translate }}</p>
+          <span class="error" [class.show]="!privacy.valid && privacy.touched" [translate]="'app.contactForm.privacyValidation'"></span>
         </div>
 
-        <app-primary-button [buttonText]="'Say hello ;)'" [isDisable]="true"></app-primary-button>
-      </div>
+        <app-primary-button [buttonText]="'app.button.sayHello' | translate" [buttonType]="'submit'" [isDisable]="!name.valid || !email.valid || !message.valid || !privacy.valid"></app-primary-button>
+      </form>
     </div>
 
     <a href="#"></a>
 
   </div>
-  <app-red-ball [width]="'204px'" [top]="'60%'" [left]="'20%'"></app-red-ball>
-  <app-red-ball [width]="'73px'" [bottom]="'7%'" [right]="'8%'"></app-red-ball>
+  <app-red-ball [width]="'204px'" [top]="'60%'" [left]="'20%'" [hiddenSize]="700"></app-red-ball>
+  <app-red-ball [width]="'73px'" [bottom]="'7%'" [right]="'8%'" [hiddenSize]="500"></app-red-ball>
 </section>
