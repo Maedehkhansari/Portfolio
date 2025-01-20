@@ -41,16 +41,16 @@ export class HeaderComponent {
 
   colors = [
     {
-      primaryColor: '#FF5959',
-      secondaryColor: '#DE0000',
-      shadowColor: '#FFEAEA',
-      svgIconColor: 'hue-rotate(0deg) brightness(1)',
-    },
-    {
       primaryColor: '#5988FF',
       secondaryColor: '#0043F0',
       shadowColor: '#EAF0FF',
       svgIconColor: 'hue-rotate(215deg) brightness(1)',
+    },
+    {
+      primaryColor: '#FF5959',
+      secondaryColor: '#DE0000',
+      shadowColor: '#FFEAEA',
+      svgIconColor: 'hue-rotate(0deg) brightness(1)',
     },
     {
       primaryColor: '#57E8A2',

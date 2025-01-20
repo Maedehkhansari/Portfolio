@@ -19,33 +19,25 @@ export class ProjectsComponent {
     {
       name: 'Join',
       description:
-        'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
-      image: 'join.png',
-      link: '#',
+        'Project planner inspired by Agile methodologies. Effortlessly manage and prioritize projects with intuitive drag-and-drop features, assign team members, and group tasks by labels or milestones.',
+      image: 'join.jpg',
+      link: 'https://github.com/Maedehkhansari/Join',
       tools: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Firebase'],
     },
     {
       name: 'Pollo Loco',
       description:
-        'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
+        'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
       image: 'el-pollo-loco.png',
-      link: '#',
+      link: 'https://github.com/Maedehkhansari/El-pollo-loco',
       tools: ['TypeScript', 'HTML', 'CSS'],
-    },
-    {
-      name: 'Simple CRM',
-      description:
-        'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
-      image: 'crm.png',
-      link: '#',
-      tools: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Firebase'],
     },
     {
       name: 'Pokédex',
       description:
-        'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
-      image: 'pokedex.png',
-      link: '#',
+        'A simple and interactive Pokedex web application. The Pokedex app allows users to search for Pokémon, view detailed information about each one, including evolutions, stats, and more.',
+      image: 'pokedex.jpg',
+      link: 'https://github.com/Maedehkhansari/Pokedex',
       tools: ['TypeScript', 'HTML', 'CSS', 'Api'],
     },
   ];
