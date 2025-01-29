@@ -25,6 +25,11 @@
       "successfullyMessage": "Ihre Nachricht wurde erfolgreich gesendet.",
       "errorMessage": "Ihre Nachricht wurde nicht gesendet, bitte versuchen Sie es erneut."
     },
+    "projects": {
+      "join": "Projektplaner inspiriert von agilen Methoden. Verwalten und priorisieren Sie Projekte mühelos mit intuitiven Drag-and-Drop-Funktionen, weisen Sie Teammitgliedern Aufgaben zu und gruppieren Sie Aufgaben nach Labels oder Meilensteinen.",
+      "polloLoco": "Spring-, Lauf- und Wurfspiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.",
+      "pokedex": "Eine einfache und interaktive Pokedex-Webanwendung. Die Pokedex-App ermöglicht es den Benutzern, nach Pokémon zu suchen und detaillierte Informationen zu jedem einzelnen anzuzeigen, einschließlich Entwicklungen, Statistiken und mehr."
+    },
     "hello": "Hallo! Ich bin Maedeh",
     "aboutme": "Ich bin ein Frontend-Entwickler aus Köln, Deutschland. Ich helfe gerne Designern und Unternehmen dabei, ihre Ideen in die Realität umzusetzen. Ich freue mich darauf, meine Entwicklerkarriere mit einer Position als Junior-Webentwickler fortzusetzen. <br><br> Wenn Sie denken, dass ich gut zu Ihren Projekten passe, kontaktieren Sie mich gerne!",
     "projectText": "Fühlen Sie sich frei, meine neuesten Entwicklungsprojekte auszuprobieren und den Code einzusehen.",

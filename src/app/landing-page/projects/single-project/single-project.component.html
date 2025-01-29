@@ -9,8 +9,8 @@
       {{tool}} @if (!last) {|}
       }
     </div>
-    <p>{{singleProject.description}}</p>
-    <a [href]="singleProject.link" target="_blank">
+    <p [innerHTML]="singleProject.description | translate"></p>
+    <a [href]="singleProject.github" target="_blank">
       <app-primary-button [buttonText]="'Github'"></app-primary-button>
     </a>
   </div>

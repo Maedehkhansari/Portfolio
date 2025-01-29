@@ -25,6 +25,11 @@
       "successfullyMessage": "Your message has been successfully sent.",
       "errorMessage": "Your message was not sent, please try again."
     },
+    "projects": {
+      "join": "Project planner inspired by Agile methodologies. Effortlessly manage and prioritize projects with intuitive drag-and-drop features, assign team members, and group tasks by labels or milestones.",
+      "polloLoco": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
+      "pokedex": "A simple and interactive Pokedex web application. The Pokedex app allows users to search for Pokémon, view detailed information about each one, including evolutions, stats, and more."
+    },
     "hello": "Hello! I am Maedeh",
     "aboutme": "I am a Front-end developer based in Cologne, Germany. I enjoy helping designers and companies bring their ideas into real life. I am looking forward to continuing my developer career with a job in a junior web developer position. <br><br> If you think I’d be a good match for your projects, contact me!",
     "projectText": "Feel free to try out my latest development projects and look into their code.",

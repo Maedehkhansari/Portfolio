@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 import { RedBallComponent } from '../components/red-ball/red-ball.component';
 import { PrimaryButtonComponent } from '../components/primary-button/primary-button.component';
-import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about',
   imports: [
     RedBallComponent,
     PrimaryButtonComponent,
-    TranslatePipe,
-    TranslateDirective,
+    TranslatePipe
   ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',

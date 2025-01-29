@@ -18,26 +18,23 @@ export class ProjectsComponent {
   projects = [
     {
       name: 'Join',
-      description:
-        'Project planner inspired by Agile methodologies. Effortlessly manage and prioritize projects with intuitive drag-and-drop features, assign team members, and group tasks by labels or milestones.',
+      description: 'app.projects.join',
       image: 'join.jpg',
-      link: 'https://github.com/Maedehkhansari/Join',
+      github: 'https://github.com/Maedehkhansari/Join',
       tools: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Firebase'],
     },
     {
       name: 'Pollo Loco',
-      description:
-        'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
+      description: 'app.projects.polloLoco',
       image: 'el-pollo-loco.png',
-      link: 'https://github.com/Maedehkhansari/El-pollo-loco',
+      github: 'https://github.com/Maedehkhansari/El-pollo-loco',
       tools: ['TypeScript', 'HTML', 'CSS'],
     },
     {
       name: 'Pokédex',
-      description:
-        'A simple and interactive Pokedex web application. The Pokedex app allows users to search for Pokémon, view detailed information about each one, including evolutions, stats, and more.',
+      description: 'app.projects.pokedex',
       image: 'pokedex.jpg',
-      link: 'https://github.com/Maedehkhansari/Pokedex',
+      github: 'https://github.com/Maedehkhansari/Pokedex',
       tools: ['TypeScript', 'HTML', 'CSS', 'Api'],
     },
   ];
