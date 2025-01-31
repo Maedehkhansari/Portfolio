@@ -77,7 +77,7 @@ header {
           z-index: 900;
         }
 
-        @media (max-width: 550px) {
+        @media (max-width: 370px) {
           background: #ffffff;
         }
       }
@@ -137,8 +137,11 @@ header {
           color: $primaryColor;
           text-decoration: none;
           font-size: 23px;
-          transition: all 0.2s ease;
           cursor: pointer;
+
+          display: inline-block;
+          width: max-content;
+          transition: font-weight 0.2s ease;
 
           &:hover {
             font-weight: bold;

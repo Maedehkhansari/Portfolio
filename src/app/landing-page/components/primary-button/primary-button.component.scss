@@ -74,3 +74,12 @@ button {
     transform: scale(0);
   }
 }
+
+button.solidColor {
+  background: $primaryColor;
+  color: white;
+
+  &:hover {
+    background: white;
+  }
+}

@@ -10,8 +10,13 @@
       }
     </div>
     <p [innerHTML]="singleProject.description | translate"></p>
-    <a [href]="singleProject.github" target="_blank">
-      <app-primary-button [buttonText]="'Github'"></app-primary-button>
-    </a>
+    <div>
+      <a [href]="singleProject.github" target="_blank">
+        <app-primary-button [buttonText]="'Live test'" [isColorSolid]="true"></app-primary-button>
+      </a>
+      <a [href]="singleProject.github" target="_blank">
+        <app-primary-button [buttonText]="'Github'"></app-primary-button>
+      </a>
+    </div>
   </div>
 </div>

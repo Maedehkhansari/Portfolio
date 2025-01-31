@@ -133,8 +133,20 @@ export class HeaderComponent {
     this.checkScrollPosition();
   }
 
-  private checkScrollPosition(): void {
+  checkScrollPosition() {
     this.isFixed = window.scrollY > 600 ? true : this.isChecked;
     this.showColoredLogo = window.scrollY > 600 ? true : this.isChecked;
+  }
+
+  scrollToElementWithOffset(event: Event, targetId: string) {
+    event.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: targetPosition - 120,
+        behavior: 'smooth',
+      });
+    }
   }
 }

@@ -6,7 +6,7 @@ section {
   justify-content: center;
 
   > div {
-    width: 1000px;
+    width: $mainWidth;
     display: flex;
     flex-direction: column;
     justify-content: center;

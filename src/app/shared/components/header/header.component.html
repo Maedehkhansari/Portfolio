@@ -7,26 +7,28 @@
       </a>
     </div>
     <div>
-      <input
-        (click)="changeLogo()"
-        type="checkbox"
-        id="menuCheckbox"
-        [checked]="isChecked"
-        [(ngModel)]="isChecked"
-      />
+      <input (click)="changeLogo()" type="checkbox" id="menuCheckbox" [checked]="isChecked" [(ngModel)]="isChecked" />
 
       <span></span>
       <span></span>
       <span></span>
 
       <div class="menu" (click)="closeMenu()">
-        <a href="#aboutme" [translate]="'app.menu.aboutme'"></a>
-        <a href="#skills" [translate]="'app.menu.skills'"></a>
-        <a href="#projects" [translate]="'app.menu.projects'"></a>
-        <a href="#contactme" [translate]="'app.menu.contactme'">Contact</a>
+        <a href="#" (click)="scrollToElementWithOffset($event, 'aboutme')">
+          <span [translate]="'app.menu.aboutme'"></span>
+        </a>
+        <a href="#" (click)="scrollToElementWithOffset($event, 'skills')">
+          <span [translate]="'app.menu.skills'"></span>
+        </a>
+        <a href="#" (click)="scrollToElementWithOffset($event, 'projects')">
+          <span [translate]="'app.menu.projects'"></span>
+        </a>
+        <a href="#" (click)="scrollToElementWithOffset($event, 'contactme')">
+          <span [translate]="'app.menu.contactme'"></span>
+        </a>
         <a (click)="changeLanguage()">{{
           languages[selectedLanguage === 0 ? 1 : 0].title
-        }}</a>
+          }}</a>
         <div (click)="changeColor()"></div>
       </div>
     </div>
