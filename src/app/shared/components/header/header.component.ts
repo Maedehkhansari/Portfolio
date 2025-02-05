@@ -1,5 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output, HostListener } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Output,
+  HostListener,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TranslateDirective } from '@ngx-translate/core';
 
@@ -21,6 +28,8 @@ export class HeaderComponent {
     title: string;
     value: string;
   }>();
+
+  @ViewChild('menuRef') menuElement!: ElementRef;
 
   isFixed: boolean = false;
   isChecked: boolean = false;
@@ -79,6 +88,12 @@ export class HeaderComponent {
     this.checkScrollPosition();
   }
 
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.assignWidthForMenuLink();
+    }, 1000);
+  }
+
   loadSelectedColor(): void {
     const colorFromStorage = localStorage.getItem('mkSiteColor');
     this.selectedColor = colorFromStorage ? parseInt(colorFromStorage, 10) : 0;
@@ -110,6 +125,9 @@ export class HeaderComponent {
     this.selectedLanguage = this.selectedLanguage === 0 ? 1 : 0;
     localStorage.setItem('mkSiteLanguage', this.selectedLanguage.toString());
     this.initLanguage();
+    setTimeout(() => {
+      this.assignWidthForMenuLink();
+    }, 10);
   }
 
   changeLogo() {
@@ -142,11 +160,22 @@ export class HeaderComponent {
     event.preventDefault();
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
-      const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+      const targetPosition =
+        targetElement.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({
         top: targetPosition - 120,
         behavior: 'smooth',
       });
     }
+  }
+
+  assignWidthForMenuLink() {
+    const links = this.menuElement.nativeElement.querySelectorAll('a span');
+    links.forEach((link: HTMLAnchorElement) => {
+      link.style.width = '';
+      const widthOfLink = link.offsetWidth;
+      const rect = link.getBoundingClientRect()
+      link.style.width = widthOfLink + 'px';
+    });
   }
 }

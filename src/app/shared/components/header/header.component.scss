@@ -136,14 +136,16 @@ header {
         a {
           color: $primaryColor;
           text-decoration: none;
-          font-size: 23px;
-          cursor: pointer;
 
-          display: inline-block;
-          width: max-content;
-          transition: font-weight 0.2s ease;
+          > span {
+            font-size: 23px;
+            white-space: nowrap;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            display: inline-block;
+          }
 
-          &:hover {
+          &:hover span {
             font-weight: bold;
           }
         }

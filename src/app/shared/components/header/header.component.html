@@ -13,7 +13,7 @@
       <span></span>
       <span></span>
 
-      <div class="menu" (click)="closeMenu()">
+      <div #menuRef class="menu" (click)="closeMenu()">
         <a href="#" (click)="scrollToElementWithOffset($event, 'aboutme')">
           <span [translate]="'app.menu.aboutme'"></span>
         </a>
@@ -26,9 +26,9 @@
         <a href="#" (click)="scrollToElementWithOffset($event, 'contactme')">
           <span [translate]="'app.menu.contactme'"></span>
         </a>
-        <a (click)="changeLanguage()">{{
-          languages[selectedLanguage === 0 ? 1 : 0].title
-          }}</a>
+        <a (click)="changeLanguage()">
+          <span>{{ languages[selectedLanguage === 0 ? 1 : 0].title }}</span>
+        </a>
         <div (click)="changeColor()"></div>
       </div>
     </div>
