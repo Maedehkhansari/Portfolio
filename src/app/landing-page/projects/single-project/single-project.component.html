@@ -1,6 +1,8 @@
 <div [className]="isEven ? 'even' : 'odd'">
   <div>
-    <img [src]="'img/projects/' + singleProject.image" [alt]="singleProject.name">
+    <a [href]="singleProject.link" target="_blank">
+      <img [src]="'img/projects/' + singleProject.image" [alt]="singleProject.name">
+    </a>
   </div>
   <div>
     <h3>{{singleProject.name}}</h3>
@@ -11,7 +13,7 @@
     </div>
     <p [innerHTML]="singleProject.description | translate"></p>
     <div>
-      <a [href]="singleProject.github" target="_blank">
+      <a [href]="singleProject.link" target="_blank">
         <app-primary-button [buttonText]="'Live test'" [isColorSolid]="true"></app-primary-button>
       </a>
       <a [href]="singleProject.github" target="_blank">

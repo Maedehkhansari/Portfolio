@@ -127,7 +127,7 @@ export class HeaderComponent {
     this.initLanguage();
     setTimeout(() => {
       this.assignWidthForMenuLink();
-    }, 10);
+    }, 30);
   }
 
   changeLogo() {

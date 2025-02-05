@@ -14,6 +14,7 @@ export class SingleProjectComponent {
     description: string;
     image: string;
     github: string;
+    link: string;
     tools: string[];
   };
 
