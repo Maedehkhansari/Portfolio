@@ -6,6 +6,7 @@ section {
   overflow: hidden;
   display: flex;
   justify-content: center;
+  position: relative;
 
   @media (max-width: 300px) {
     height: 102vh;
@@ -24,6 +25,11 @@ section {
     @media (max-width: 1300px) {
       width: 850px;
       height: 850px;
+    }
+
+    @media (max-width: 1100px) {
+      width: 750px;
+      height: 750px;
     }
 
     @media (max-width: 950px) {
@@ -88,10 +94,18 @@ section {
         }
 
         @media (max-width: 950px) {
-          width: 470px;
+          width: 450px;
+        }
+
+        @media (max-height: 850px) {
+          width: 400px;
         }
 
         @media (max-width: 400px) {
+          width: 320px;
+        }
+
+        @media (max-height: 680px) {
           width: 320px;
         }
       }
@@ -121,10 +135,20 @@ section {
             margin-bottom: 8px;
           }
 
+          @media (max-height: 800px) {
+            font-size: 44px;
+            margin-bottom: 8px;
+          }  
+
           @media (max-width: 1200px) {
             font-size: 34px;
             margin-bottom: 8px;
           }
+
+          @media (max-height: 700px) {
+            font-size: 34px;
+            margin-bottom: 8px;
+          } 
 
           @media (max-width: 950px) {
             font-size: 34px;
@@ -136,6 +160,11 @@ section {
             font-size: 26px;
             margin-bottom: 7px;
           }
+
+          @media (max-height: 650px) {
+            font-size: 26px;
+            margin-bottom: 7px;
+          } 
         }
 
         > h2 {
@@ -150,10 +179,20 @@ section {
             line-height: 88px;
           }
 
+          @media (max-height: 800px) {
+            font-size: 100px;
+            line-height: 88px;
+          }  
+
           @media (max-width: 1200px) {
             font-size: 80px;
             line-height: 70px;
           }
+
+          @media (max-height: 700px) {
+            font-size: 70px;
+            line-height: 63px;
+          } 
 
           @media (max-width: 950px) {
             color: #ffffff;
@@ -163,6 +202,11 @@ section {
             font-size: 59px;
             line-height: 52px;
           }
+
+          @media (max-height: 650px) {
+            font-size: 59px;
+            line-height: 52px;
+          } 
         }
 
         > h2:nth-child(3) {
@@ -172,13 +216,25 @@ section {
             font-size: 93px;
           }
 
+          @media (max-height: 800px) {
+            font-size: 93px;
+          }  
+
           @media (max-width: 1200px) {
             font-size: 74px;
           }
 
+          @media (max-height: 700px) {
+            font-size: 65px;
+          }  
+
           @media (max-width: 520px) {
             font-size: 55px;
           }
+
+          @media (max-height: 650px) {
+            font-size: 55px;
+          } 
         }
       }
 
