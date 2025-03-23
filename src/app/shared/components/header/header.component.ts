@@ -9,6 +9,9 @@ import {
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TranslateDirective } from '@ngx-translate/core';
+import { Location } from '@angular/common';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -17,6 +20,18 @@ import { TranslateDirective } from '@ngx-translate/core';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
+  constructor(private router: Router, private location: Location) {
+    // Listen for navigation end to catch when coming back to index
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      const fragment = window.location.hash.substring(1);
+      if (fragment) {
+        setTimeout(() => this.scrollToElement(fragment), 100); // Delay to ensure element is loaded
+      }
+    });
+  }
+
   @Output() colorChanged = new EventEmitter<{
     primaryColor: string;
     secondaryColor: string;
@@ -140,10 +155,12 @@ export class HeaderComponent {
   }
 
   closeMenu() {
-    setTimeout(() => {
-      this.changeLogo();
-      this.isChecked = false;
-    }, 100);
+    if (this.isChecked === true) {
+      setTimeout(() => {
+        this.changeLogo();
+        this.isChecked = false;
+      }, 100);
+    }
   }
 
   @HostListener('window:scroll', [])
@@ -158,6 +175,17 @@ export class HeaderComponent {
 
   scrollToElementWithOffset(event: Event, targetId: string) {
     event.preventDefault();
+
+    const isIndexPage = this.router.url === '/' || this.router.url.startsWith('/#');
+    if (isIndexPage) {
+      this.router.navigate([], { fragment: targetId, replaceUrl: true });
+      this.scrollToElement(targetId);
+    } else {
+      this.router.navigate(['/'], { fragment: targetId });
+    }
+  }
+
+  scrollToElement(targetId: string) {
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
       const targetPosition =
@@ -174,7 +202,7 @@ export class HeaderComponent {
     links.forEach((link: HTMLAnchorElement) => {
       link.style.width = '';
       const widthOfLink = link.offsetWidth;
-      const rect = link.getBoundingClientRect()
+      const rect = link.getBoundingClientRect();
       link.style.width = widthOfLink + 'px';
     });
   }

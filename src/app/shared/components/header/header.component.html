@@ -1,7 +1,7 @@
 <header [ngClass]="{ fixed: isFixed }">
   <div>
     <div>
-      <a href="#">
+      <a href="#" (click)="closeMenu();">
         <img [src]="whiteLogo" [class.hidden]="showColoredLogo" alt="logo" />
         <img [src]="redLogo" [class.hidden]="!showColoredLogo" alt="logo" />
       </a>
@@ -13,17 +13,17 @@
       <span></span>
       <span></span>
 
-      <div #menuRef class="menu" (click)="closeMenu()">
-        <a href="#" (click)="scrollToElementWithOffset($event, 'aboutme')">
+      <div #menuRef class="menu">
+        <a href="#" (click)="scrollToElementWithOffset($event, 'aboutme'); closeMenu();">
           <span [translate]="'app.menu.aboutme'"></span>
         </a>
-        <a href="#" (click)="scrollToElementWithOffset($event, 'skills')">
+        <a href="#" (click)="scrollToElementWithOffset($event, 'skills'); closeMenu();">
           <span [translate]="'app.menu.skills'"></span>
         </a>
-        <a href="#" (click)="scrollToElementWithOffset($event, 'projects')">
+        <a href="#" (click)="scrollToElementWithOffset($event, 'projects'); closeMenu();">
           <span [translate]="'app.menu.projects'"></span>
         </a>
-        <a href="#" (click)="scrollToElementWithOffset($event, 'contactme')">
+        <a href="#" (click)="scrollToElementWithOffset($event, 'contactme'); closeMenu();">
           <span [translate]="'app.menu.contactme'"></span>
         </a>
         <a (click)="changeLanguage()">
